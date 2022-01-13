@@ -1,0 +1,55 @@
+$second-color: #474350;
+$base-color: #d8d2e1;
+$second-color-darker: #2d2b33;
+
+.Navbar {
+  width: 10%;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  background-color: $second-color;
+}
+
+.Navlistcontainer {
+  padding: 0;
+  width: 100%;
+  h5,
+  svg {
+    opacity: 0.7;
+  }
+  :hover,
+  .active {
+    background-color: $second-color-darker;
+    h5,
+    svg {
+      opacity: 1;
+    }
+  }
+  // .active {
+  //   background-color: $second-color-darker !important;
+  //   opacity: 1 !important;
+  // }
+}
+
+.Navlist {
+  width: 100%;
+  padding: 2rem 1rem;
+  cursor: pointer;
+}
+
+.Iconlist {
+  margin-right: 0.5rem;
+  color: $base-color;
+  width: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  color: $base-color;
+}
