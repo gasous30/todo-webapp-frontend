@@ -4,5 +4,5 @@ export interface INavlist {
     icon: any;
     link: string;
   };
-  key: number;
+  key: any;
 }

@@ -2,13 +2,13 @@ $second-color: #474350;
 $base-color: #d8d2e1;
 
 * {
-  font-family: "Lora", serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
 body {
+  font-family: "Lora", serif;
   background-color: $base-color;
   color: $second-color;
 }

@@ -9,8 +9,8 @@ const Navlist: FC<INavlist> = ({ val, key }) => {
       className={`d-flex align-items-center ${
         window.location.pathname === val.link ? styles.active : ""
       } ${styles.Navlist} `}
-      key={key}
       onClick={() => (window.location.pathname = val.link)}
+      key={key}
     >
       <div className={styles.Iconlist}>{val.icon}</div>
       <h5>{val.title}</h5>
