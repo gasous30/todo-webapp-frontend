@@ -70,3 +70,21 @@ $base-color: #d8d2e1;
     }
   }
 }
+
+.FormWatch {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  > h3 {
+    margin-bottom: 1.5rem;
+  }
+  .InputGroup {
+    margin-bottom: 1rem;
+    > p {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .BtnGroup {
+    gap: 1rem;
+  }
+}

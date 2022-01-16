@@ -1,0 +1,29 @@
+$second-color: #474350;
+$base-color: #d8d2e1;
+
+.Popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s ease-in-out;
+
+  .PopupInner {
+    background-color: $base-color;
+    width: 30%;
+    border-radius: 17px;
+    padding: 2rem;
+    .CloseBtn {
+      margin-left: 2rem;
+      float: right;
+      width: 2rem;
+    }
+  }
+}
