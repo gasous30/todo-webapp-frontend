@@ -15,7 +15,16 @@ const generateDarkColorHex = () => {
   return color;
 };
 
+const watchlist_url = "http://localhost:3001/todoweb/watchlist";
+
 const MovieDetail: FC<IMovieDetail> = ({ val, randColor }) => {
+  const handleCheckBtn = () => {
+    console.log(val._id);
+    axios
+      .delete(`${watchlist_url}/${val._id}`)
+      .then((res) => window.location.reload())
+      .catch((err) => console.log(err));
+  };
   return (
     <div
       className={`row ${styles.Moviecontainer}`}
@@ -35,6 +44,7 @@ const MovieDetail: FC<IMovieDetail> = ({ val, randColor }) => {
           type="button"
           className={`btn btn-primary d-flex justify-content-center align-items-center`}
           style={{ backgroundColor: randColor, borderColor: randColor }}
+          onClick={handleCheckBtn}
         >
           <CheckIcon />
         </button>
@@ -56,8 +66,6 @@ const CatMovie: FC<ICatMovie> = ({ cat, arrval }) => {
 };
 
 const Watchlist = () => {
-  const watchlist_url = "http://localhost:3001/todoweb/watchlist";
-
   const [watchlist, setWatchlist] = useState<Val[]>([]);
   const [categorylistLeft, setCategorylistLeft] = useState<string[]>([]);
   const [categorylistRight, setCategorylistRight] = useState<string[]>([]);
@@ -90,13 +98,21 @@ const Watchlist = () => {
 
   const handleSubmitBtn = () => {
     if (categoryInput.length > 0 && titleInput.length > 0) {
-      let newWatchlist = {
+      let newWatchlist: Val = {
         category: categoryInput,
         name: titleInput,
-        description: descInput,
-        place: placeInput,
       };
-      axios.post(watchlist_url, newWatchlist).then((res) => console.log(res));
+      if (descInput !== null) {
+        newWatchlist.description = descInput;
+      }
+      if (placeInput !== null) {
+        newWatchlist.place = placeInput;
+      }
+      console.log(newWatchlist);
+      axios
+        .post(watchlist_url, newWatchlist)
+        .then((res) => window.location.reload())
+        .catch((err) => console.log(err));
     } else {
       alert("Category and Title must be filled");
     }
