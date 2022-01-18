@@ -19,7 +19,6 @@ const watchlist_url = "http://localhost:3001/todoweb/watchlist";
 
 const MovieDetail: FC<IMovieDetail> = ({ val, randColor }) => {
   const handleCheckBtn = () => {
-    console.log(val._id);
     axios
       .delete(`${watchlist_url}/${val._id}`)
       .then((res) => window.location.reload())
