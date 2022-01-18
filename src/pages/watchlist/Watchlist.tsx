@@ -45,7 +45,7 @@ const MovieDetail: FC<IMovieDetail> = ({ val, randColor }) => {
           style={{ backgroundColor: randColor, borderColor: randColor }}
           onClick={handleCheckBtn}
         >
-          <CheckIcon />
+          <CheckIcon fontSize="large" />
         </button>
       </div>
     </div>

@@ -25,11 +25,11 @@ const EventDetail: FC<IEventDetail> = ({
   setTempEditEvent,
   setTriggerEdit,
 }) => {
-  let start = new Intl.DateTimeFormat("en-US", {
+  let start = new Intl.DateTimeFormat("id-ID", {
     dateStyle: "full",
     timeStyle: "long",
   }).format(new Date(event.started_at));
-  let end = new Intl.DateTimeFormat("en-US", {
+  let end = new Intl.DateTimeFormat("id-ID", {
     dateStyle: "full",
     timeStyle: "long",
   }).format(new Date(event.end_at));
